@@ -1,4 +1,4 @@
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 
 // import { useAuth } from '../hooks/useAuth';
 import { useRoom } from '../hooks/useRoom';
@@ -15,6 +15,7 @@ import { Button } from '../components/Button';
 import { Question } from '../components/Question';
 
 import '../styles/room.scss';
+import { useEffect } from 'react';
 
 type RoomParams = {
   id: string;
@@ -27,6 +28,13 @@ export function AdminRoom() {
   const roomId = params.id;
 
   const { questions, title } = useRoom(roomId);
+
+  useEffect(() => {
+    const userAuthenticated = sessionStorage.getItem('userLetmeaskAuthenticated');
+    if (!userAuthenticated) {
+      history.push('/');
+    }
+  }, [history]);
 
   async function handleEndRoom() {
     await database.ref(`rooms/${roomId}`).update({
@@ -58,7 +66,9 @@ export function AdminRoom() {
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="letmeask" />
+          <Link to="/">
+            <img src={logoImg} alt="letmeask" />
+          </Link>
           <div>
             <RoomCode code={roomId} />
             <Button

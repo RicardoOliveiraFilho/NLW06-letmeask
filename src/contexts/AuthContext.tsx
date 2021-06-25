@@ -11,6 +11,7 @@ type User = {
 type AuthContextType = {
   user: User | undefined;
   signInWithGoogle: () => Promise<void>;
+  signOut: () => Promise<void>;
 }
 
 type AuthContextProviderProps = {
@@ -36,6 +37,8 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
           name: displayName,
           avatar: photoURL
         });
+
+        sessionStorage.setItem('userLetmeaskAuthenticated', 'true');
       }
     });
 
@@ -60,11 +63,19 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
         name: displayName,
         avatar: photoURL
       });
+
+      sessionStorage.setItem('userLetmeaskAuthenticated', 'true');
     }
   }
 
+  async function signOut() {
+    await firebase.auth().signOut();
+    setUser(undefined);
+    sessionStorage.clear();
+  }
+
   return (
-    <AuthContext.Provider value={{ user, signInWithGoogle }}>
+    <AuthContext.Provider value={{ user, signInWithGoogle, signOut }}>
       {props.children}
     </AuthContext.Provider>
   );

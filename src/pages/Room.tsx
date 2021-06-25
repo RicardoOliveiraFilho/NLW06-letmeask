@@ -1,5 +1,5 @@
-import { FormEvent, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { FormEvent, useEffect, useState } from 'react';
+import { Link, useHistory, useParams } from 'react-router-dom';
 
 import { database } from '../services/firebase';
 import { useAuth } from '../hooks/useAuth';
@@ -20,11 +20,19 @@ type RoomParams = {
 
 export function Room() {
   const { user } = useAuth();
+  const history = useHistory();
   const params = useParams<RoomParams>();
   const roomId = params.id;
 
   const [ newQuestion, setNewQuestion ] = useState('');
   const { questions, title } = useRoom(roomId);
+
+  useEffect(() => {
+    const userAuthenticated = sessionStorage.getItem('userLetmeaskAuthenticated');
+    if (!userAuthenticated) {
+      history.push('/');
+    }
+  }, [history]);
 
   async function handleSendQuestion(event: FormEvent) {
     event.preventDefault();
@@ -66,7 +74,9 @@ export function Room() {
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="letmeask" />
+          <Link to="/">
+            <img src={logoImg} alt="letmeask" />
+          </Link>
           <RoomCode code={roomId} />
         </div>
       </header>
