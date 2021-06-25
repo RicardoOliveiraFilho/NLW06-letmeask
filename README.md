@@ -18,7 +18,9 @@
 </p>
 
 ### Features<a id="features"></a> - <a href="#topo">Topo</a>
-- [x] Autenticação baseada em uma Conta Google através da integração com o Firebase.
+- [x] Autenticação (SignIn e SignOut) baseada em uma Conta Google através da integração com o Firebase.
+- [x] Controles de Segurança I: Não se é possível acessar as rotas de criação da sala e das salas em si (não-admin/admin) sem estar autenticado.
+- [X] Controles de Segurança II: Ao informar o código da sala, a app verifica se o usuário é o dono dela para assim redirecionar para a tela correta (não-admin/admin).
 - [x] Criação de uma Sala de perguntas.
 - [x] Entrar em uma Sala de perguntas já criada através de seu código.
 - [x] Inserir pergunta em uma sala.
