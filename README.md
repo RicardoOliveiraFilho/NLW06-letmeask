@@ -1,3 +1,5 @@
+<a id="topo"></a>
+
 <img alt="Letmeask" src="./github/banner.png">
 
 <p align="center">
@@ -8,16 +10,14 @@
 <p>
 
 <p align="center">
-  <a href="#computer-sobre">Sobre</a> •
-  <a href="#memo-roteiro">Roteiro</a> •
-  <a href="#triangular_ruler-status-do-projeto">Status</a> •
-  <a href="#movie_camera-demonstração">Demonstração</a> •
-  <a href="#dvd-executar-o-projeto">Executar</a> •
-  <a href="#hammer-tecnologias">Tecnologias</a> •
-  <a href="#boy-autor">Autor</a>
+  <a href="#features">Features</a> •
+  <a href="#pre-requisitos">Pré-requisitos</a> •
+  <a href="#rodando">Rodando a Aplicação</a> •
+  <a href="#tecnologias">Tecnologias</a> •
+  <a href="#autor">Autor</a>
 </p>
 
-### Features 
+### Features<a id="features"></a> - <a href="#topo">Topo</a>
 - [x] Autenticação baseada em uma Conta Google através da integração com o Firebase.
 - [x] Criação de uma Sala de perguntas.
 - [x] Entrar em uma Sala de perguntas já criada através de seu código.
@@ -31,7 +31,7 @@
 Projeto finalizado ✔
 </h4>
 
-###  Pré-requisitos<a id="pre-requisitos"></a>
+###  Pré-requisitos<a id="pre-requisitos"></a> - <a href="#topo">Topo</a>
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
  [Git](https://git-scm.com/),
@@ -58,7 +58,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
  REACT_APP_APP_ID=
  ````
  
-### Rodando a Aplicação<a id="rodando"></a>
+### Rodando a Aplicação<a id="rodando"></a> - <a href="#topo">Topo</a>
    
 ````bash 
  # Clone este repositório
@@ -79,7 +79,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
  ````
 <p> Quando você tiver realizado todos os passos do projeto verá a  <a href="./github/screen-app.png" >imagem do projeto</a> </p>
 
-### Tecnologias<a id="tecnologias"></a>
+### Tecnologias<a id="tecnologias"></a> - <a href="#topo">Topo</a>
  As seguintes ferramentas foram usadas na construção do projeto:
  
   - [Sass](https://sass-lang.com/)
@@ -87,7 +87,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
   - [React](https://reactjs.org/)
   - [Firebase](https://firebase.google.com/?hl=pt)
 
-### Autor <a id="autor"> </a>
+### Autor <a id="autor"> </a> - <a href="#topo">Topo</a>
 
 <a href="https://github.com/RicardoOliveiraFilho" style="text-decoration: none;">
 
